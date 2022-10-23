@@ -16,13 +16,13 @@
         "main": "apps/example-web/src/main.tsx",
         "polyfills": "apps/example-web/src/polyfills.ts",
         "tsConfig": "apps/example-web/tsconfig.app.json",
+        "webpackConfig": "apps/example-web/webpack.config.js",
         "assets": [
           "apps/example-web/src/favicon.ico",
           "apps/example-web/src/assets"
         ],
         "styles": ["apps/example-web/src/styles.css"],
-        "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "scripts": []
       },
       "configurations": {
         "development": {
@@ -56,7 +56,8 @@
       },
       "configurations": {
         "development": {
-          "buildTarget": "example-web:build:development"
+          "buildTarget": "example-web:build:development",
+          "open": true
         },
         "production": {
           "buildTarget": "example-web:build:production",
