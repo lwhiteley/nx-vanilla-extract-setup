@@ -10,6 +10,10 @@ module.exports = (config) => {
     (rule) => !rule.test.toString().includes('css')
   );
 
+  const postCssLoaderConfig = cssRule.oneOf[0].use.find((loaderConfig) =>
+    loaderConfig.loader.includes('postcss-loader')
+  );
+
   const rules = [
     ...rulesWithoutCss,
     {
@@ -25,6 +29,7 @@ module.exports = (config) => {
                 url: false, // Required as image imports should be handled via JS/TS import statements
               },
             },
+            postCssLoaderConfig,
           ],
         },
         ...cssRule.oneOf,
